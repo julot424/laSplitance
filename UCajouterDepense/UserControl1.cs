@@ -213,5 +213,10 @@ namespace UCajouterDepense
         {
 
         }
+
+        private void dateDepense_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

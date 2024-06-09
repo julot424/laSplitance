@@ -109,6 +109,7 @@
             this.dateDepense.Name = "dateDepense";
             this.dateDepense.Size = new System.Drawing.Size(260, 35);
             this.dateDepense.TabIndex = 5;
+            this.dateDepense.ValueChanged += new System.EventHandler(this.dateDepense_ValueChanged);
             // 
             // txtBoxCommentaire
             // 

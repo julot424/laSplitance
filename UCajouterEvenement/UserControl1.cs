@@ -35,11 +35,37 @@ namespace UCajouterEvenement
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            string qry = "INSERT INTO Evenements (titreEvent, dateDebut, dateFin, description, codeCreateur, soldeON) VALUES(@titre, @dateDebut, @dateFin, @commentaire, @codeCreateur, @soldeON); SELECT last_insert_rowid();";
+            int codeCrea = Convert.ToInt32(cboCreePar.SelectedValue);
+            int soldeON = chkSolde.Checked ? 1 : 0;
+            string dateDebutFormatted = DateStart.Value.ToString("yyyy-MM-dd");
+            string dateFinFormatted = DateEnd.Value.ToString("yyyy-MM-dd");
+
+            using (SQLiteCommand cmd = new SQLiteCommand(qry, cx))
+            {
+                cmd.Parameters.AddWithValue("@titre", txtTitreEvent.Text);
+                cmd.Parameters.AddWithValue("@dateDebut", dateDebutFormatted);
+                cmd.Parameters.AddWithValue("@dateFin", dateFinFormatted);
+                cmd.Parameters.AddWithValue("@commentaire", txtCommentaire.Text);
+                cmd.Parameters.AddWithValue("@codeCreateur", codeCrea);
+                cmd.Parameters.AddWithValue("@soldeON", soldeON);
+                
+                cx.Open();
+                //cmd.ExecuteNonQuery();
+                long eventID = (long)cmd.ExecuteScalar();
+                cx.Close();
+                
+            }
+
+            
+
+
             pnlInvitation.Visible = true;
         }
 
         private void UC_Ajouter_Evenement_Load(object sender, EventArgs e)
         {
+            pnlInvitation.Visible = false;
             List<int> selectedParticipants = new List<int>();
 
             cx.Open();
@@ -49,30 +75,11 @@ namespace UCajouterEvenement
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                chkListParticipants.Items.Clear();
+                cboCreePar.Items.Clear();
 
-                chkListParticipants.DataSource = dt;
-                chkListParticipants.DisplayMember = "fullname";
-                chkListParticipants.ValueMember = "codeParticipant";
-
-                foreach(DataRow r in dt.Rows)
-                {
-                    int codePart = Convert.ToInt32(r["codeParticipant"]);
-                    selectedParticipants.Add(codePart);
-                }
-
-                foreach(int codePart in selectedParticipants)
-                {
-                    string insertInvite = "INSERT INTO Invites (codeEvent, codePart) VALUES (@codeEvent, @codePart)";
-                    using (SQLiteCommand cmd = new SQLiteCommand(insertInvite, cx))
-                    {
-                        cmd.Parameters.AddWithValue("@codeEvent", 1);
-                        cmd.Parameters.AddWithValue("@codeParticipant", codePart);
-                        //cmd.ExecuteNonQuery();
-                    }
-                }
-
-                pnlInvitation.Visible = false;
+                cboCreePar.DataSource = dt;
+                cboCreePar.DisplayMember = "fullname";
+                cboCreePar.ValueMember = "codeParticipant";
             }
             cx.Close();
         }

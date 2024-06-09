@@ -32,19 +32,20 @@
             this.lblNouvelEvenement = new System.Windows.Forms.Label();
             this.txtTitreEvent = new System.Windows.Forms.TextBox();
             this.picBoxDelimitation = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DateStart = new System.Windows.Forms.DateTimePicker();
+            this.DateEnd = new System.Windows.Forms.DateTimePicker();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
             this.lblCommentaire = new System.Windows.Forms.Label();
             this.txtCommentaire = new System.Windows.Forms.TextBox();
             this.lblCreePar = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCreePar = new System.Windows.Forms.ComboBox();
             this.btnValider = new System.Windows.Forms.Button();
             this.pnlInvitation = new System.Windows.Forms.Panel();
-            this.lblPartAInvite = new System.Windows.Forms.Label();
-            this.chkListParticipants = new System.Windows.Forms.CheckedListBox();
             this.btnEnvoyerInvite = new System.Windows.Forms.Button();
+            this.chkListParticipants = new System.Windows.Forms.CheckedListBox();
+            this.lblPartAInvite = new System.Windows.Forms.Label();
+            this.chkSolde = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).BeginInit();
             this.pnlInvitation.SuspendLayout();
             this.SuspendLayout();
@@ -81,22 +82,23 @@
             this.picBoxDelimitation.TabIndex = 5;
             this.picBoxDelimitation.TabStop = false;
             // 
-            // dateTimePicker1
+            // DateStart
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(18, 183);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(258, 26);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 7, 31, 2, 36, 0, 0);
+            this.DateStart.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateStart.Location = new System.Drawing.Point(18, 183);
+            this.DateStart.Name = "DateStart";
+            this.DateStart.Size = new System.Drawing.Size(258, 26);
+            this.DateStart.TabIndex = 6;
+            this.DateStart.Value = new System.DateTime(2024, 6, 9, 0, 0, 0, 0);
             // 
-            // dateTimePicker2
+            // DateEnd
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker2.Location = new System.Drawing.Point(318, 183);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(258, 26);
-            this.dateTimePicker2.TabIndex = 7;
+            this.DateEnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.DateEnd.Location = new System.Drawing.Point(318, 183);
+            this.DateEnd.Name = "DateEnd";
+            this.DateEnd.Size = new System.Drawing.Size(258, 26);
+            this.DateEnd.TabIndex = 7;
+            this.DateEnd.Value = new System.DateTime(2024, 6, 9, 9, 50, 59, 0);
             // 
             // lblDateDebut
             // 
@@ -141,27 +143,27 @@
             // 
             this.lblCreePar.AutoSize = true;
             this.lblCreePar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreePar.Location = new System.Drawing.Point(14, 352);
+            this.lblCreePar.Location = new System.Drawing.Point(23, 405);
             this.lblCreePar.Name = "lblCreePar";
             this.lblCreePar.Size = new System.Drawing.Size(102, 22);
             this.lblCreePar.TabIndex = 12;
             this.lblCreePar.Text = "Créé par :";
             // 
-            // comboBox1
+            // cboCreePar
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 349);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 30);
-            this.comboBox1.TabIndex = 13;
+            this.cboCreePar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cboCreePar.FormattingEnabled = true;
+            this.cboCreePar.Location = new System.Drawing.Point(131, 402);
+            this.cboCreePar.Name = "cboCreePar";
+            this.cboCreePar.Size = new System.Drawing.Size(284, 30);
+            this.cboCreePar.TabIndex = 13;
             // 
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnValider.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.White;
-            this.btnValider.Location = new System.Drawing.Point(18, 411);
+            this.btnValider.Location = new System.Drawing.Point(18, 449);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(574, 47);
             this.btnValider.TabIndex = 14;
@@ -174,21 +176,23 @@
             this.pnlInvitation.Controls.Add(this.btnEnvoyerInvite);
             this.pnlInvitation.Controls.Add(this.chkListParticipants);
             this.pnlInvitation.Controls.Add(this.lblPartAInvite);
-            this.pnlInvitation.Location = new System.Drawing.Point(18, 96);
+            this.pnlInvitation.Location = new System.Drawing.Point(591, 502);
             this.pnlInvitation.Name = "pnlInvitation";
             this.pnlInvitation.Size = new System.Drawing.Size(571, 362);
             this.pnlInvitation.TabIndex = 16;
             this.pnlInvitation.Visible = false;
             // 
-            // lblPartAInvite
+            // btnEnvoyerInvite
             // 
-            this.lblPartAInvite.AutoSize = true;
-            this.lblPartAInvite.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPartAInvite.Location = new System.Drawing.Point(160, 10);
-            this.lblPartAInvite.Name = "lblPartAInvite";
-            this.lblPartAInvite.Size = new System.Drawing.Size(257, 22);
-            this.lblPartAInvite.TabIndex = 9;
-            this.lblPartAInvite.Text = "Les participants à ajouter :";
+            this.btnEnvoyerInvite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnEnvoyerInvite.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnEnvoyerInvite.ForeColor = System.Drawing.Color.White;
+            this.btnEnvoyerInvite.Location = new System.Drawing.Point(22, 309);
+            this.btnEnvoyerInvite.Name = "btnEnvoyerInvite";
+            this.btnEnvoyerInvite.Size = new System.Drawing.Size(527, 40);
+            this.btnEnvoyerInvite.TabIndex = 12;
+            this.btnEnvoyerInvite.Text = "Envoyer les invitations";
+            this.btnEnvoyerInvite.UseVisualStyleBackColor = false;
             // 
             // chkListParticipants
             // 
@@ -203,38 +207,49 @@
             this.chkListParticipants.TabIndex = 11;
             this.chkListParticipants.SelectedIndexChanged += new System.EventHandler(this.chkListParticipants_SelectedIndexChanged);
             // 
-            // btnEnvoyerInvite
+            // lblPartAInvite
             // 
-            this.btnEnvoyerInvite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.btnEnvoyerInvite.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnEnvoyerInvite.ForeColor = System.Drawing.Color.White;
-            this.btnEnvoyerInvite.Location = new System.Drawing.Point(22, 309);
-            this.btnEnvoyerInvite.Name = "btnEnvoyerInvite";
-            this.btnEnvoyerInvite.Size = new System.Drawing.Size(527, 40);
-            this.btnEnvoyerInvite.TabIndex = 12;
-            this.btnEnvoyerInvite.Text = "Envoyer les invitations";
-            this.btnEnvoyerInvite.UseVisualStyleBackColor = false;
+            this.lblPartAInvite.AutoSize = true;
+            this.lblPartAInvite.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartAInvite.Location = new System.Drawing.Point(160, 10);
+            this.lblPartAInvite.Name = "lblPartAInvite";
+            this.lblPartAInvite.Size = new System.Drawing.Size(257, 22);
+            this.lblPartAInvite.TabIndex = 9;
+            this.lblPartAInvite.Text = "Les participants à ajouter :";
+            // 
+            // chkSolde
+            // 
+            this.chkSolde.AutoSize = true;
+            this.chkSolde.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkSolde.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.chkSolde.Location = new System.Drawing.Point(27, 359);
+            this.chkSolde.Name = "chkSolde";
+            this.chkSolde.Size = new System.Drawing.Size(120, 26);
+            this.chkSolde.TabIndex = 17;
+            this.chkSolde.Text = "Soldé O/N";
+            this.chkSolde.UseVisualStyleBackColor = true;
             // 
             // UC_Ajouter_Evenement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.chkSolde);
             this.Controls.Add(this.pnlInvitation);
             this.Controls.Add(this.btnValider);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboCreePar);
             this.Controls.Add(this.lblCreePar);
             this.Controls.Add(this.txtCommentaire);
             this.Controls.Add(this.lblCommentaire);
             this.Controls.Add(this.lblDateFin);
             this.Controls.Add(this.lblDateDebut);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DateEnd);
+            this.Controls.Add(this.DateStart);
             this.Controls.Add(this.txtTitreEvent);
             this.Controls.Add(this.lblNouvelEvenement);
             this.Controls.Add(this.picBoxDelimitation);
             this.Name = "UC_Ajouter_Evenement";
-            this.Size = new System.Drawing.Size(609, 481);
+            this.Size = new System.Drawing.Size(609, 520);
             this.Load += new System.EventHandler(this.UC_Ajouter_Evenement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).EndInit();
             this.pnlInvitation.ResumeLayout(false);
@@ -249,18 +264,19 @@
         private System.Windows.Forms.Label lblNouvelEvenement;
         private System.Windows.Forms.TextBox txtTitreEvent;
         private System.Windows.Forms.PictureBox picBoxDelimitation;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DateStart;
+        private System.Windows.Forms.DateTimePicker DateEnd;
         private System.Windows.Forms.Label lblDateDebut;
         private System.Windows.Forms.Label lblDateFin;
         private System.Windows.Forms.Label lblCommentaire;
         private System.Windows.Forms.TextBox txtCommentaire;
         private System.Windows.Forms.Label lblCreePar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCreePar;
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Panel pnlInvitation;
         private System.Windows.Forms.Label lblPartAInvite;
         private System.Windows.Forms.CheckedListBox chkListParticipants;
         private System.Windows.Forms.Button btnEnvoyerInvite;
+        private System.Windows.Forms.CheckBox chkSolde;
     }
 }
