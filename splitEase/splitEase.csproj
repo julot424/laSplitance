@@ -107,6 +107,10 @@
       <Project>{5D23A692-C339-4242-81E9-48A94816C608}</Project>
       <Name>UCajouterDepense</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UCajouterEvenement\UCajouterEvenement.csproj">
+      <Project>{EE4FB691-0DA3-4680-95EB-C45F17B7250B}</Project>
+      <Name>UCajouterEvenement</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\img\delimitationBar.png" />

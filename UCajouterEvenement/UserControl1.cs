@@ -8,29 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace UCajouterEvenement
 {
     public partial class UC_Ajouter_Evenement: UserControl
     {
         private SQLiteConnection cx = new SQLiteConnection();
-        public UC_Ajouter_Evenement(/*SQLiteConnection conn*/)
+        public event EventHandler EvenementValider;
+
+        public UC_Ajouter_Evenement(SQLiteConnection conn)
         {
             InitializeComponent();
 
-            //cx = conn;
-            string chaine = "Data Source=Events.sqlite";
-
-            try
-            {
-                this.cx = new SQLiteConnection(chaine);
-                this.cx.Open();
-            }
-            catch (SQLiteException err)
-            {
-                MessageBox.Show(err.Message);
-            }
-            cx.Close();
+            cx = conn;
+            
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -80,8 +72,16 @@ namespace UCajouterEvenement
                 cboCreePar.DataSource = dt;
                 cboCreePar.DisplayMember = "fullname";
                 cboCreePar.ValueMember = "codeParticipant";
+
+                chkListParticipants.DataSource = dt;
+                chkListParticipants.DisplayMember = "fullname";
+                chkListParticipants.ValueMember = "codeParticipant";
             }
-            cx.Close();
+
+            
+
+            
+                cx.Close();
         }
 
         private void btnInviter_Click(object sender, EventArgs e)
@@ -92,6 +92,44 @@ namespace UCajouterEvenement
         private void chkListParticipants_SelectedIndexChanged(object sender, EventArgs e)
         {
             chkListParticipants.ClearSelected();
+        }
+
+        private void txtTitreEvent_Enter(object sender, EventArgs e)
+        {
+            if(txtTitreEvent.Text == "Titre")
+            {
+                txtTitreEvent.Text = "";
+            }
+        }
+
+        private void btnEnvoyerInvite_Click(object sender, EventArgs e)
+        {
+            cx.Open();
+            string inviteQry = "INSERT INTO Invites (codeEvent, codePart) VALUES (@codeEvent, @codePart)";
+            int curentEvent = Convert.ToInt32(new SQLiteCommand("SELECT codeEvent from Evenements ORDER BY codeEvent DESC LIMIT 1", cx).ExecuteScalar());
+            
+
+            foreach (var item in chkListParticipants.CheckedItems)
+            {
+                DataRowView testItem = item as DataRowView;
+                if(testItem != null)
+                {
+                    DataRow row = testItem.Row;
+                    int codePart = Convert.ToInt32(row["codeParticipant"]);
+
+                    using (SQLiteCommand inviteCmd = new SQLiteCommand(inviteQry, cx))
+                    {
+                        inviteCmd.Parameters.AddWithValue("@codeEvent", curentEvent);
+                        inviteCmd.Parameters.AddWithValue("@codePart", codePart);
+                        inviteCmd.ExecuteNonQuery();
+                    }
+                }
+                
+                
+            }
+
+            cx.Close();
+            EvenementValider?.Invoke(this, EventArgs.Empty);
         }
     }
 }

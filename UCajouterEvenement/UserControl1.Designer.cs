@@ -70,6 +70,7 @@
             this.txtTitreEvent.Size = new System.Drawing.Size(260, 32);
             this.txtTitreEvent.TabIndex = 4;
             this.txtTitreEvent.Text = "Titre";
+            this.txtTitreEvent.Enter += new System.EventHandler(this.txtTitreEvent_Enter);
             // 
             // picBoxDelimitation
             // 
@@ -176,7 +177,7 @@
             this.pnlInvitation.Controls.Add(this.btnEnvoyerInvite);
             this.pnlInvitation.Controls.Add(this.chkListParticipants);
             this.pnlInvitation.Controls.Add(this.lblPartAInvite);
-            this.pnlInvitation.Location = new System.Drawing.Point(591, 502);
+            this.pnlInvitation.Location = new System.Drawing.Point(18, 134);
             this.pnlInvitation.Name = "pnlInvitation";
             this.pnlInvitation.Size = new System.Drawing.Size(571, 362);
             this.pnlInvitation.TabIndex = 16;
@@ -193,6 +194,7 @@
             this.btnEnvoyerInvite.TabIndex = 12;
             this.btnEnvoyerInvite.Text = "Envoyer les invitations";
             this.btnEnvoyerInvite.UseVisualStyleBackColor = false;
+            this.btnEnvoyerInvite.Click += new System.EventHandler(this.btnEnvoyerInvite_Click);
             // 
             // chkListParticipants
             // 
@@ -234,7 +236,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.chkSolde);
             this.Controls.Add(this.pnlInvitation);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.cboCreePar);
@@ -248,6 +249,7 @@
             this.Controls.Add(this.txtTitreEvent);
             this.Controls.Add(this.lblNouvelEvenement);
             this.Controls.Add(this.picBoxDelimitation);
+            this.Controls.Add(this.chkSolde);
             this.Name = "UC_Ajouter_Evenement";
             this.Size = new System.Drawing.Size(609, 520);
             this.Load += new System.EventHandler(this.UC_Ajouter_Evenement_Load);

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SQLite;
 using UCajouterDepense;
 using System.Drawing.Printing;
+using UCajouterEvenement;
 
 namespace splitEase
 {
@@ -46,6 +47,7 @@ namespace splitEase
             string qry = @"SELECT e.codeEvent, e.titreEvent, e.description, e.dateDebut, e.dateFin, e.soldeON, p.nomPart, p.prenomPart FROM Evenements e JOIN Participants p ON e.codeCreateur = p.codeParticipant;";
             using (SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx))
             {
+                eventsTable.Clear();
                 da.Fill(eventsTable);
             }
 
@@ -61,7 +63,7 @@ namespace splitEase
             {
                 DataRow row = eventsTable.Rows[index];
                 lblEventNum.Text = row["codeEvent"].ToString();
-                lblCreePar.Text = $"{row["prenomPart"].ToString()} {row["nomPart"].ToString()}";
+                lblCreateur.Text = $"{row["prenomPart"].ToString()} {row["nomPart"].ToString()}";
                 lblTitre.Text = row["titreEvent"].ToString();
                 lblDescription.Text = row["description"].ToString();
                 lblDateDebut.Text = Convert.ToDateTime(row["dateDebut"]).ToString("dd/MM/yyyy");
@@ -79,14 +81,15 @@ namespace splitEase
         private void btnAjouterDepense_Click(object sender, EventArgs e)
         {
             btnAjouterDepense.Enabled = false;
-            UC_Ajouter_Depense add = new UC_Ajouter_Depense(cx);
+            UC_Ajouter_Depense addDepense = new UC_Ajouter_Depense(cx);
             panelAjouterDepense.Controls.Clear();
-            panelAjouterDepense.Controls.Add(add);
+            panelAjouterDepense.Controls.Add(addDepense);
 
-            add.Dock = DockStyle.Fill;
+            addDepense.Dock = DockStyle.Fill;
             panelAjouterDepense.Visible = true;
+            panelAjouterDepense.BringToFront();
 
-            add.DepenseValider += Add_DepenseValider;
+            addDepense.DepenseValider += Add_DepenseValider;
             
         }
 
@@ -106,6 +109,7 @@ namespace splitEase
 
         private void BarDeNav_EvenementsClicked(object sender, EventArgs e)
         {
+            loadData();
             this.Text = "Split Ease : Evénements";
             lblCategorie.Text = "Evénement";
             cacherTout();
@@ -188,6 +192,27 @@ namespace splitEase
         {
             currentIndex = eventsTable.Rows.Count - 1;
             DisplayRecord(currentIndex);
+        }
+
+        private void btnAjouterEvenement_Click(object sender, EventArgs e)
+        {
+            UC_Ajouter_Evenement addEvent = new UC_Ajouter_Evenement(cx);
+            pnlAjouterEvenement.Controls.Clear();
+            pnlAjouterEvenement.Controls.Add(addEvent);
+
+            addEvent.Dock = DockStyle.Fill;
+            pnlAjouterEvenement.Visible = true;
+            pnlAjouterEvenement.BringToFront();
+
+            addEvent.EvenementValider += Add_EvenementValider;
+        }
+
+        private void Add_EvenementValider(object sender, EventArgs e)
+        {
+            pnlAjouterEvenement.Controls.Clear();
+            pnlAjouterEvenement.Visible = false;
+            pnlAjouterEvenement.Enabled = true;
+            loadData();
         }
     }
 }

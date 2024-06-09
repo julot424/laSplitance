@@ -42,7 +42,7 @@
             this.pnl1a1 = new System.Windows.Forms.Panel();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblTitre = new System.Windows.Forms.Label();
-            this.lblCreePar = new System.Windows.Forms.Label();
+            this.lblCreateur = new System.Windows.Forms.Label();
             this.lblEventSur = new System.Windows.Forms.Label();
             this.chkSoldeON = new System.Windows.Forms.CheckBox();
             this.lblSoldeON = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.picBoxDelimitation = new System.Windows.Forms.PictureBox();
             this.lblEventNum = new System.Windows.Forms.Label();
             this.lblEvenementNum = new System.Windows.Forms.Label();
+            this.pnlAjouterEvenement = new System.Windows.Forms.Panel();
             this.pnlBtn1a1.SuspendLayout();
             this.pnl1a1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).BeginInit();
@@ -102,9 +103,9 @@
             // panelAjouterDepense
             // 
             this.panelAjouterDepense.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelAjouterDepense.Location = new System.Drawing.Point(211, 80);
+            this.panelAjouterDepense.Location = new System.Drawing.Point(187, 80);
             this.panelAjouterDepense.Name = "panelAjouterDepense";
-            this.panelAjouterDepense.Size = new System.Drawing.Size(602, 443);
+            this.panelAjouterDepense.Size = new System.Drawing.Size(609, 443);
             this.panelAjouterDepense.TabIndex = 3;
             this.panelAjouterDepense.Visible = false;
             // 
@@ -174,12 +175,13 @@
             this.btnAjouterEvenement.TabIndex = 4;
             this.btnAjouterEvenement.Text = "Ajouter un événement";
             this.btnAjouterEvenement.UseVisualStyleBackColor = false;
+            this.btnAjouterEvenement.Click += new System.EventHandler(this.btnAjouterEvenement_Click);
             // 
             // pnl1a1
             // 
             this.pnl1a1.Controls.Add(this.lblDescription);
             this.pnl1a1.Controls.Add(this.lblTitre);
-            this.pnl1a1.Controls.Add(this.lblCreePar);
+            this.pnl1a1.Controls.Add(this.lblCreateur);
             this.pnl1a1.Controls.Add(this.lblEventSur);
             this.pnl1a1.Controls.Add(this.chkSoldeON);
             this.pnl1a1.Controls.Add(this.lblSoldeON);
@@ -206,7 +208,7 @@
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(473, 45);
             this.lblDescription.TabIndex = 15;
-            this.lblDescription.Text = "big rdv de neuille sa mere";
+            this.lblDescription.Text = "sans desciption";
             // 
             // lblTitre
             // 
@@ -214,20 +216,20 @@
             this.lblTitre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitre.Location = new System.Drawing.Point(97, 137);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(105, 19);
+            this.lblTitre.Size = new System.Drawing.Size(84, 19);
             this.lblTitre.TabIndex = 14;
-            this.lblTitre.Text = "rdvdeNeuille";
+            this.lblTitre.Text = "sans Titre";
             // 
-            // lblCreePar
+            // lblCreateur
             // 
-            this.lblCreePar.AutoSize = true;
-            this.lblCreePar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCreePar.Location = new System.Drawing.Point(128, 99);
-            this.lblCreePar.Name = "lblCreePar";
-            this.lblCreePar.Size = new System.Drawing.Size(59, 19);
-            this.lblCreePar.TabIndex = 13;
-            this.lblCreePar.Text = "neuille";
-            this.lblCreePar.Click += new System.EventHandler(this.label1_Click);
+            this.lblCreateur.AutoSize = true;
+            this.lblCreateur.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCreateur.Location = new System.Drawing.Point(128, 99);
+            this.lblCreateur.Name = "lblCreateur";
+            this.lblCreateur.Size = new System.Drawing.Size(113, 19);
+            this.lblCreateur.TabIndex = 13;
+            this.lblCreateur.Text = "sans créateur";
+            this.lblCreateur.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblEventSur
             // 
@@ -362,18 +364,28 @@
             this.lblEvenementNum.Text = "Evénement n°";
             this.lblEvenementNum.Click += new System.EventHandler(this.lblEvenementNum_Click);
             // 
+            // pnlAjouterEvenement
+            // 
+            this.pnlAjouterEvenement.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlAjouterEvenement.Location = new System.Drawing.Point(187, 17);
+            this.pnlAjouterEvenement.Name = "pnlAjouterEvenement";
+            this.pnlAjouterEvenement.Size = new System.Drawing.Size(609, 555);
+            this.pnlAjouterEvenement.TabIndex = 4;
+            this.pnlAjouterEvenement.Visible = false;
+            // 
             // frmSplitEase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 600);
-            this.Controls.Add(this.pnlBtn1a1);
-            this.Controls.Add(this.pnl1a1);
-            this.Controls.Add(this.btnAjouterEvenement);
             this.Controls.Add(this.panelAjouterDepense);
+            this.Controls.Add(this.pnlAjouterEvenement);
+            this.Controls.Add(this.pnlBtn1a1);
+            this.Controls.Add(this.btnAjouterEvenement);
             this.Controls.Add(this.lblCategorie);
             this.Controls.Add(this.btnAjouterDepense);
             this.Controls.Add(this.BarDeNav);
+            this.Controls.Add(this.pnl1a1);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -411,7 +423,7 @@
         private System.Windows.Forms.Label lblSoldeON;
         private System.Windows.Forms.CheckBox chkSoldeON;
         private System.Windows.Forms.Label lblEventSur;
-        private System.Windows.Forms.Label lblCreePar;
+        private System.Windows.Forms.Label lblCreateur;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Button btnFirst;
@@ -419,6 +431,7 @@
         private System.Windows.Forms.Button btnApres;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Panel pnlBtn1a1;
+        private System.Windows.Forms.Panel pnlAjouterEvenement;
     }
 }
 
