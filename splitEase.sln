@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "splitEase", "splitEase\splitEase.csproj", "{518E6D63-9899-43DB-9513-9CAF4CECD0C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCajouterDepense", "UCajouterDepense\UCajouterDepense.csproj", "{5D23A692-C339-4242-81E9-48A94816C608}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{518E6D63-9899-43DB-9513-9CAF4CECD0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{518E6D63-9899-43DB-9513-9CAF4CECD0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{518E6D63-9899-43DB-9513-9CAF4CECD0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{518E6D63-9899-43DB-9513-9CAF4CECD0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D23A692-C339-4242-81E9-48A94816C608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D23A692-C339-4242-81E9-48A94816C608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D23A692-C339-4242-81E9-48A94816C608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D23A692-C339-4242-81E9-48A94816C608}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DF87701-E5C6-4478-ABCD-1067FF30BBAA}
+	EndGlobalSection
+EndGlobal
