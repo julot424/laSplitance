@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "splitEase", "splitEase\spli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCajouterDepense", "UCajouterDepense\UCajouterDepense.csproj", "{5D23A692-C339-4242-81E9-48A94816C608}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCajouterEvenement", "UCajouterEvenement\UCajouterEvenement.csproj", "{EE4FB691-0DA3-4680-95EB-C45F17B7250B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D23A692-C339-4242-81E9-48A94816C608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D23A692-C339-4242-81E9-48A94816C608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D23A692-C339-4242-81E9-48A94816C608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4FB691-0DA3-4680-95EB-C45F17B7250B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4FB691-0DA3-4680-95EB-C45F17B7250B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4FB691-0DA3-4680-95EB-C45F17B7250B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4FB691-0DA3-4680-95EB-C45F17B7250B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

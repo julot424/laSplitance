@@ -208,5 +208,10 @@ namespace UCajouterDepense
             conn.Close();
             DepenseValider?.Invoke(this, EventArgs.Empty);
         }
+
+        private void picBoxDelimitation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

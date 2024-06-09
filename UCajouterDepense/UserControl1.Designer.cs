@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Ajouter_Depense));
             this.lblTitre = new System.Windows.Forms.Label();
             this.cboEvenement = new System.Windows.Forms.ComboBox();
             this.cboPayePar = new System.Windows.Forms.ComboBox();
@@ -39,6 +40,8 @@
             this.chkTous = new System.Windows.Forms.CheckBox();
             this.chkListBenef = new System.Windows.Forms.CheckedListBox();
             this.btnValider = new System.Windows.Forms.Button();
+            this.picBoxDelimitation = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -147,6 +150,7 @@
             // 
             // chkListBenef
             // 
+            this.chkListBenef.CheckOnClick = true;
             this.chkListBenef.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkListBenef.FormattingEnabled = true;
             this.chkListBenef.Location = new System.Drawing.Point(23, 230);
@@ -168,6 +172,18 @@
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
+            // picBoxDelimitation
+            // 
+            this.picBoxDelimitation.Image = global::UCajouterDepense.Properties.Resources.delimitationBar;
+            this.picBoxDelimitation.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxDelimitation.InitialImage")));
+            this.picBoxDelimitation.Location = new System.Drawing.Point(3, 26);
+            this.picBoxDelimitation.Name = "picBoxDelimitation";
+            this.picBoxDelimitation.Size = new System.Drawing.Size(592, 63);
+            this.picBoxDelimitation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxDelimitation.TabIndex = 11;
+            this.picBoxDelimitation.TabStop = false;
+            this.picBoxDelimitation.Click += new System.EventHandler(this.picBoxDelimitation_Click);
+            // 
             // UC_Ajouter_Depense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,9 +201,11 @@
             this.Controls.Add(this.cboPayePar);
             this.Controls.Add(this.cboEvenement);
             this.Controls.Add(this.lblTitre);
+            this.Controls.Add(this.picBoxDelimitation);
             this.Name = "UC_Ajouter_Depense";
             this.Size = new System.Drawing.Size(598, 422);
             this.Load += new System.EventHandler(this.UC_Ajouter_Depense_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +224,6 @@
         private System.Windows.Forms.CheckBox chkTous;
         private System.Windows.Forms.CheckedListBox chkListBenef;
         private System.Windows.Forms.Button btnValider;
+        private System.Windows.Forms.PictureBox picBoxDelimitation;
     }
 }

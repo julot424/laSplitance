@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5D23A692-C339-4242-81E9-48A94816C608}</ProjectGuid>
+    <ProjectGuid>{EE4FB691-0DA3-4680-95EB-C45F17B7250B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>UCajouterDepense</RootNamespace>
-    <AssemblyName>UCajouterDepense</AssemblyName>
+    <RootNamespace>UCajouterEvenement</RootNamespace>
+    <AssemblyName>UCajouterEvenement</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -72,8 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\delimitationBar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -33,31 +33,31 @@
             this.btnAjouterDepense = new System.Windows.Forms.Button();
             this.lblCategorie = new System.Windows.Forms.Label();
             this.panelAjouterDepense = new System.Windows.Forms.Panel();
-            this.btnAjouterEvenement = new System.Windows.Forms.Button();
-            this.pnl1a1 = new System.Windows.Forms.Panel();
-            this.lblEvenementNum = new System.Windows.Forms.Label();
-            this.lblEventNum = new System.Windows.Forms.Label();
-            this.lblCree = new System.Windows.Forms.Label();
-            this.lblestTitre = new System.Windows.Forms.Label();
-            this.lblestDescription = new System.Windows.Forms.Label();
-            this.lblDu = new System.Windows.Forms.Label();
-            this.lblDateDebut = new System.Windows.Forms.Label();
-            this.lblAu = new System.Windows.Forms.Label();
-            this.lblDateFin = new System.Windows.Forms.Label();
-            this.lblSoldeON = new System.Windows.Forms.Label();
-            this.chkSoldeON = new System.Windows.Forms.CheckBox();
-            this.lblEventSur = new System.Windows.Forms.Label();
-            this.lblCreePar = new System.Windows.Forms.Label();
-            this.lblTitre = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.btnAvant = new System.Windows.Forms.Button();
-            this.btnApres = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
             this.pnlBtn1a1 = new System.Windows.Forms.Panel();
             this.btnFirst = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnAvant = new System.Windows.Forms.Button();
+            this.btnApres = new System.Windows.Forms.Button();
+            this.btnAjouterEvenement = new System.Windows.Forms.Button();
+            this.pnl1a1 = new System.Windows.Forms.Panel();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.lblCreePar = new System.Windows.Forms.Label();
+            this.lblEventSur = new System.Windows.Forms.Label();
+            this.chkSoldeON = new System.Windows.Forms.CheckBox();
+            this.lblSoldeON = new System.Windows.Forms.Label();
+            this.lblDateFin = new System.Windows.Forms.Label();
+            this.lblAu = new System.Windows.Forms.Label();
+            this.lblDateDebut = new System.Windows.Forms.Label();
+            this.lblDu = new System.Windows.Forms.Label();
+            this.lblestDescription = new System.Windows.Forms.Label();
+            this.lblestTitre = new System.Windows.Forms.Label();
+            this.lblCree = new System.Windows.Forms.Label();
             this.picBoxDelimitation = new System.Windows.Forms.PictureBox();
-            this.pnl1a1.SuspendLayout();
+            this.lblEventNum = new System.Windows.Forms.Label();
+            this.lblEvenementNum = new System.Windows.Forms.Label();
             this.pnlBtn1a1.SuspendLayout();
+            this.pnl1a1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,11 +102,66 @@
             // panelAjouterDepense
             // 
             this.panelAjouterDepense.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelAjouterDepense.Location = new System.Drawing.Point(211, 87);
+            this.panelAjouterDepense.Location = new System.Drawing.Point(211, 80);
             this.panelAjouterDepense.Name = "panelAjouterDepense";
             this.panelAjouterDepense.Size = new System.Drawing.Size(602, 443);
             this.panelAjouterDepense.TabIndex = 3;
             this.panelAjouterDepense.Visible = false;
+            // 
+            // pnlBtn1a1
+            // 
+            this.pnlBtn1a1.Controls.Add(this.btnFirst);
+            this.pnlBtn1a1.Controls.Add(this.btnLast);
+            this.pnlBtn1a1.Controls.Add(this.btnAvant);
+            this.pnlBtn1a1.Controls.Add(this.btnApres);
+            this.pnlBtn1a1.Location = new System.Drawing.Point(651, 475);
+            this.pnlBtn1a1.Name = "pnlBtn1a1";
+            this.pnlBtn1a1.Size = new System.Drawing.Size(357, 100);
+            this.pnlBtn1a1.TabIndex = 10;
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackgroundImage = global::splitEase.Properties.Resources.btnFirst;
+            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFirst.Location = new System.Drawing.Point(0, 31);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(55, 36);
+            this.btnFirst.TabIndex = 6;
+            this.btnFirst.UseVisualStyleBackColor = true;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // btnLast
+            // 
+            this.btnLast.BackgroundImage = global::splitEase.Properties.Resources.btnLast;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLast.Location = new System.Drawing.Point(281, 31);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(55, 36);
+            this.btnLast.TabIndex = 9;
+            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // btnAvant
+            // 
+            this.btnAvant.BackgroundImage = global::splitEase.Properties.Resources.btnPrevious;
+            this.btnAvant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAvant.Location = new System.Drawing.Point(95, 31);
+            this.btnAvant.Name = "btnAvant";
+            this.btnAvant.Size = new System.Drawing.Size(55, 36);
+            this.btnAvant.TabIndex = 7;
+            this.btnAvant.UseVisualStyleBackColor = true;
+            this.btnAvant.Click += new System.EventHandler(this.btnAvant_Click);
+            // 
+            // btnApres
+            // 
+            this.btnApres.BackgroundImage = global::splitEase.Properties.Resources.btnNext;
+            this.btnApres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnApres.Location = new System.Drawing.Point(191, 31);
+            this.btnApres.Name = "btnApres";
+            this.btnApres.Size = new System.Drawing.Size(55, 36);
+            this.btnApres.TabIndex = 8;
+            this.btnApres.UseVisualStyleBackColor = true;
+            this.btnApres.Click += new System.EventHandler(this.btnApres_Click);
             // 
             // btnAjouterEvenement
             // 
@@ -138,133 +193,30 @@
             this.pnl1a1.Controls.Add(this.picBoxDelimitation);
             this.pnl1a1.Controls.Add(this.lblEventNum);
             this.pnl1a1.Controls.Add(this.lblEvenementNum);
-            this.pnl1a1.Location = new System.Drawing.Point(18, 236);
+            this.pnl1a1.Location = new System.Drawing.Point(18, 249);
             this.pnl1a1.Name = "pnl1a1";
             this.pnl1a1.Size = new System.Drawing.Size(627, 339);
             this.pnl1a1.TabIndex = 5;
             this.pnl1a1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl1a1_Paint);
             // 
-            // lblEvenementNum
+            // lblDescription
             // 
-            this.lblEvenementNum.AutoSize = true;
-            this.lblEvenementNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEvenementNum.Location = new System.Drawing.Point(243, 0);
-            this.lblEvenementNum.Name = "lblEvenementNum";
-            this.lblEvenementNum.Size = new System.Drawing.Size(115, 19);
-            this.lblEvenementNum.TabIndex = 0;
-            this.lblEvenementNum.Text = "Evénement n°";
-            this.lblEvenementNum.Click += new System.EventHandler(this.lblEvenementNum_Click);
+            this.lblDescription.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDescription.Location = new System.Drawing.Point(151, 174);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(473, 45);
+            this.lblDescription.TabIndex = 15;
+            this.lblDescription.Text = "big rdv de neuille sa mere";
             // 
-            // lblEventNum
+            // lblTitre
             // 
-            this.lblEventNum.AutoSize = true;
-            this.lblEventNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEventNum.Location = new System.Drawing.Point(352, 0);
-            this.lblEventNum.Name = "lblEventNum";
-            this.lblEventNum.Size = new System.Drawing.Size(18, 19);
-            this.lblEventNum.TabIndex = 1;
-            this.lblEventNum.Text = "1";
-            this.lblEventNum.Click += new System.EventHandler(this.lblEventNum_Click);
-            // 
-            // lblCree
-            // 
-            this.lblCree.AutoSize = true;
-            this.lblCree.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCree.Location = new System.Drawing.Point(38, 99);
-            this.lblCree.Name = "lblCree";
-            this.lblCree.Size = new System.Drawing.Size(84, 19);
-            this.lblCree.TabIndex = 3;
-            this.lblCree.Text = "Créé par :";
-            // 
-            // lblestTitre
-            // 
-            this.lblestTitre.AutoSize = true;
-            this.lblestTitre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblestTitre.Location = new System.Drawing.Point(38, 137);
-            this.lblestTitre.Name = "lblestTitre";
-            this.lblestTitre.Size = new System.Drawing.Size(53, 19);
-            this.lblestTitre.TabIndex = 4;
-            this.lblestTitre.Text = "Titre :";
-            // 
-            // lblestDescription
-            // 
-            this.lblestDescription.AutoSize = true;
-            this.lblestDescription.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblestDescription.Location = new System.Drawing.Point(38, 174);
-            this.lblestDescription.Name = "lblestDescription";
-            this.lblestDescription.Size = new System.Drawing.Size(107, 19);
-            this.lblestDescription.TabIndex = 5;
-            this.lblestDescription.Text = "Description :";
-            // 
-            // lblDu
-            // 
-            this.lblDu.AutoSize = true;
-            this.lblDu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDu.Location = new System.Drawing.Point(38, 255);
-            this.lblDu.Name = "lblDu";
-            this.lblDu.Size = new System.Drawing.Size(41, 19);
-            this.lblDu.TabIndex = 6;
-            this.lblDu.Text = "Du :";
-            // 
-            // lblDateDebut
-            // 
-            this.lblDateDebut.AutoSize = true;
-            this.lblDateDebut.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDateDebut.Location = new System.Drawing.Point(85, 255);
-            this.lblDateDebut.Name = "lblDateDebut";
-            this.lblDateDebut.Size = new System.Drawing.Size(89, 19);
-            this.lblDateDebut.TabIndex = 7;
-            this.lblDateDebut.Text = "01/01/2024";
-            // 
-            // lblAu
-            // 
-            this.lblAu.AutoSize = true;
-            this.lblAu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblAu.Location = new System.Drawing.Point(180, 255);
-            this.lblAu.Name = "lblAu";
-            this.lblAu.Size = new System.Drawing.Size(28, 19);
-            this.lblAu.TabIndex = 8;
-            this.lblAu.Text = "au";
-            // 
-            // lblDateFin
-            // 
-            this.lblDateFin.AutoSize = true;
-            this.lblDateFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDateFin.Location = new System.Drawing.Point(214, 255);
-            this.lblDateFin.Name = "lblDateFin";
-            this.lblDateFin.Size = new System.Drawing.Size(89, 19);
-            this.lblDateFin.TabIndex = 9;
-            this.lblDateFin.Text = "01/01/2024";
-            // 
-            // lblSoldeON
-            // 
-            this.lblSoldeON.AutoSize = true;
-            this.lblSoldeON.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSoldeON.Location = new System.Drawing.Point(38, 294);
-            this.lblSoldeON.Name = "lblSoldeON";
-            this.lblSoldeON.Size = new System.Drawing.Size(104, 19);
-            this.lblSoldeON.TabIndex = 10;
-            this.lblSoldeON.Text = "Soldé (P/N) :";
-            // 
-            // chkSoldeON
-            // 
-            this.chkSoldeON.AutoSize = true;
-            this.chkSoldeON.Enabled = false;
-            this.chkSoldeON.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.chkSoldeON.Location = new System.Drawing.Point(148, 299);
-            this.chkSoldeON.Name = "chkSoldeON";
-            this.chkSoldeON.Size = new System.Drawing.Size(15, 14);
-            this.chkSoldeON.TabIndex = 11;
-            this.chkSoldeON.UseVisualStyleBackColor = true;
-            // 
-            // lblEventSur
-            // 
-            this.lblEventSur.AutoSize = true;
-            this.lblEventSur.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblEventSur.Location = new System.Drawing.Point(243, 306);
-            this.lblEventSur.Name = "lblEventSur";
-            this.lblEventSur.Size = new System.Drawing.Size(0, 19);
-            this.lblEventSur.TabIndex = 12;
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitre.Location = new System.Drawing.Point(97, 137);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(105, 19);
+            this.lblTitre.TabIndex = 14;
+            this.lblTitre.Text = "rdvdeNeuille";
             // 
             // lblCreePar
             // 
@@ -277,79 +229,105 @@
             this.lblCreePar.Text = "neuille";
             this.lblCreePar.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lblTitre
+            // lblEventSur
             // 
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTitre.Location = new System.Drawing.Point(97, 137);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(105, 19);
-            this.lblTitre.TabIndex = 14;
-            this.lblTitre.Text = "rdvdeNeuille";
+            this.lblEventSur.AutoSize = true;
+            this.lblEventSur.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEventSur.Location = new System.Drawing.Point(243, 306);
+            this.lblEventSur.Name = "lblEventSur";
+            this.lblEventSur.Size = new System.Drawing.Size(0, 19);
+            this.lblEventSur.TabIndex = 12;
             // 
-            // lblDescription
+            // chkSoldeON
             // 
-            this.lblDescription.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDescription.Location = new System.Drawing.Point(151, 174);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(473, 45);
-            this.lblDescription.TabIndex = 15;
-            this.lblDescription.Text = "big rdv de neuille sa mere";
+            this.chkSoldeON.AutoSize = true;
+            this.chkSoldeON.Enabled = false;
+            this.chkSoldeON.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.chkSoldeON.Location = new System.Drawing.Point(148, 299);
+            this.chkSoldeON.Name = "chkSoldeON";
+            this.chkSoldeON.Size = new System.Drawing.Size(15, 14);
+            this.chkSoldeON.TabIndex = 11;
+            this.chkSoldeON.UseVisualStyleBackColor = true;
             // 
-            // btnAvant
+            // lblSoldeON
             // 
-            this.btnAvant.BackgroundImage = global::splitEase.Properties.Resources.btnPrevious;
-            this.btnAvant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAvant.Location = new System.Drawing.Point(95, 31);
-            this.btnAvant.Name = "btnAvant";
-            this.btnAvant.Size = new System.Drawing.Size(55, 36);
-            this.btnAvant.TabIndex = 7;
-            this.btnAvant.UseVisualStyleBackColor = true;
-            this.btnAvant.Click += new System.EventHandler(this.btnAvant_Click);
+            this.lblSoldeON.AutoSize = true;
+            this.lblSoldeON.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSoldeON.Location = new System.Drawing.Point(38, 294);
+            this.lblSoldeON.Name = "lblSoldeON";
+            this.lblSoldeON.Size = new System.Drawing.Size(104, 19);
+            this.lblSoldeON.TabIndex = 10;
+            this.lblSoldeON.Text = "Soldé (P/N) :";
             // 
-            // btnApres
+            // lblDateFin
             // 
-            this.btnApres.BackgroundImage = global::splitEase.Properties.Resources.btnNext;
-            this.btnApres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnApres.Location = new System.Drawing.Point(191, 31);
-            this.btnApres.Name = "btnApres";
-            this.btnApres.Size = new System.Drawing.Size(55, 36);
-            this.btnApres.TabIndex = 8;
-            this.btnApres.UseVisualStyleBackColor = true;
-            this.btnApres.Click += new System.EventHandler(this.btnApres_Click);
+            this.lblDateFin.AutoSize = true;
+            this.lblDateFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDateFin.Location = new System.Drawing.Point(214, 255);
+            this.lblDateFin.Name = "lblDateFin";
+            this.lblDateFin.Size = new System.Drawing.Size(89, 19);
+            this.lblDateFin.TabIndex = 9;
+            this.lblDateFin.Text = "01/01/2024";
             // 
-            // btnLast
+            // lblAu
             // 
-            this.btnLast.BackgroundImage = global::splitEase.Properties.Resources.btnLast;
-            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLast.Location = new System.Drawing.Point(281, 31);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(55, 36);
-            this.btnLast.TabIndex = 9;
-            this.btnLast.UseVisualStyleBackColor = true;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            this.lblAu.AutoSize = true;
+            this.lblAu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAu.Location = new System.Drawing.Point(180, 255);
+            this.lblAu.Name = "lblAu";
+            this.lblAu.Size = new System.Drawing.Size(28, 19);
+            this.lblAu.TabIndex = 8;
+            this.lblAu.Text = "au";
             // 
-            // pnlBtn1a1
+            // lblDateDebut
             // 
-            this.pnlBtn1a1.Controls.Add(this.btnFirst);
-            this.pnlBtn1a1.Controls.Add(this.btnLast);
-            this.pnlBtn1a1.Controls.Add(this.btnAvant);
-            this.pnlBtn1a1.Controls.Add(this.btnApres);
-            this.pnlBtn1a1.Location = new System.Drawing.Point(651, 475);
-            this.pnlBtn1a1.Name = "pnlBtn1a1";
-            this.pnlBtn1a1.Size = new System.Drawing.Size(357, 100);
-            this.pnlBtn1a1.TabIndex = 10;
+            this.lblDateDebut.AutoSize = true;
+            this.lblDateDebut.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDateDebut.Location = new System.Drawing.Point(85, 255);
+            this.lblDateDebut.Name = "lblDateDebut";
+            this.lblDateDebut.Size = new System.Drawing.Size(89, 19);
+            this.lblDateDebut.TabIndex = 7;
+            this.lblDateDebut.Text = "01/01/2024";
             // 
-            // btnFirst
+            // lblDu
             // 
-            this.btnFirst.BackgroundImage = global::splitEase.Properties.Resources.btnFirst;
-            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnFirst.Location = new System.Drawing.Point(0, 31);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(55, 36);
-            this.btnFirst.TabIndex = 6;
-            this.btnFirst.UseVisualStyleBackColor = true;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            this.lblDu.AutoSize = true;
+            this.lblDu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblDu.Location = new System.Drawing.Point(38, 255);
+            this.lblDu.Name = "lblDu";
+            this.lblDu.Size = new System.Drawing.Size(41, 19);
+            this.lblDu.TabIndex = 6;
+            this.lblDu.Text = "Du :";
+            // 
+            // lblestDescription
+            // 
+            this.lblestDescription.AutoSize = true;
+            this.lblestDescription.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblestDescription.Location = new System.Drawing.Point(38, 174);
+            this.lblestDescription.Name = "lblestDescription";
+            this.lblestDescription.Size = new System.Drawing.Size(107, 19);
+            this.lblestDescription.TabIndex = 5;
+            this.lblestDescription.Text = "Description :";
+            // 
+            // lblestTitre
+            // 
+            this.lblestTitre.AutoSize = true;
+            this.lblestTitre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblestTitre.Location = new System.Drawing.Point(38, 137);
+            this.lblestTitre.Name = "lblestTitre";
+            this.lblestTitre.Size = new System.Drawing.Size(53, 19);
+            this.lblestTitre.TabIndex = 4;
+            this.lblestTitre.Text = "Titre :";
+            // 
+            // lblCree
+            // 
+            this.lblCree.AutoSize = true;
+            this.lblCree.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCree.Location = new System.Drawing.Point(38, 99);
+            this.lblCree.Name = "lblCree";
+            this.lblCree.Size = new System.Drawing.Size(84, 19);
+            this.lblCree.TabIndex = 3;
+            this.lblCree.Text = "Créé par :";
             // 
             // picBoxDelimitation
             // 
@@ -361,6 +339,28 @@
             this.picBoxDelimitation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxDelimitation.TabIndex = 2;
             this.picBoxDelimitation.TabStop = false;
+            // 
+            // lblEventNum
+            // 
+            this.lblEventNum.AutoSize = true;
+            this.lblEventNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblEventNum.Location = new System.Drawing.Point(352, 0);
+            this.lblEventNum.Name = "lblEventNum";
+            this.lblEventNum.Size = new System.Drawing.Size(18, 19);
+            this.lblEventNum.TabIndex = 1;
+            this.lblEventNum.Text = "1";
+            this.lblEventNum.Click += new System.EventHandler(this.lblEventNum_Click);
+            // 
+            // lblEvenementNum
+            // 
+            this.lblEvenementNum.AutoSize = true;
+            this.lblEvenementNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvenementNum.Location = new System.Drawing.Point(243, 0);
+            this.lblEvenementNum.Name = "lblEvenementNum";
+            this.lblEvenementNum.Size = new System.Drawing.Size(115, 19);
+            this.lblEvenementNum.TabIndex = 0;
+            this.lblEvenementNum.Text = "Evénement n°";
+            this.lblEvenementNum.Click += new System.EventHandler(this.lblEvenementNum_Click);
             // 
             // frmSplitEase
             // 
@@ -381,9 +381,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Split Ease : Acceuil";
             this.Load += new System.EventHandler(this.frmSplitEase_Load);
+            this.pnlBtn1a1.ResumeLayout(false);
             this.pnl1a1.ResumeLayout(false);
             this.pnl1a1.PerformLayout();
-            this.pnlBtn1a1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
