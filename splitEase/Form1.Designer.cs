@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplitEase));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BarDeNav = new navigationBar.navigationBar();
             this.btnAjouterDepense = new System.Windows.Forms.Button();
             this.lblCategorie = new System.Windows.Forms.Label();
@@ -57,9 +60,20 @@
             this.lblEventNum = new System.Windows.Forms.Label();
             this.lblEvenementNum = new System.Windows.Forms.Label();
             this.pnlAjouterEvenement = new System.Windows.Forms.Panel();
+            this.btnAjouterPart = new System.Windows.Forms.Button();
+            this.pnlGestionDesPart = new System.Windows.Forms.Panel();
+            this.dataGridViewListPart = new System.Windows.Forms.DataGridView();
+            this.cboListEvenement = new System.Windows.Forms.ComboBox();
+            this.lblCurentEvent = new System.Windows.Forms.Label();
+            this.lblParticipantA = new System.Windows.Forms.Label();
+            this.lblGestionDelEvent = new System.Windows.Forms.Label();
+            this.picBoxDelimitation1 = new System.Windows.Forms.PictureBox();
             this.pnlBtn1a1.SuspendLayout();
             this.pnl1a1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).BeginInit();
+            this.pnlGestionDesPart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation1)).BeginInit();
             this.SuspendLayout();
             // 
             // BarDeNav
@@ -94,7 +108,7 @@
             this.lblCategorie.AutoSize = true;
             this.lblCategorie.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.lblCategorie.Location = new System.Drawing.Point(12, 182);
+            this.lblCategorie.Location = new System.Drawing.Point(12, 196);
             this.lblCategorie.Name = "lblCategorie";
             this.lblCategorie.Size = new System.Drawing.Size(116, 34);
             this.lblCategorie.TabIndex = 2;
@@ -103,7 +117,7 @@
             // panelAjouterDepense
             // 
             this.panelAjouterDepense.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelAjouterDepense.Location = new System.Drawing.Point(187, 80);
+            this.panelAjouterDepense.Location = new System.Drawing.Point(202, 42);
             this.panelAjouterDepense.Name = "panelAjouterDepense";
             this.panelAjouterDepense.Size = new System.Drawing.Size(609, 443);
             this.panelAjouterDepense.TabIndex = 3;
@@ -115,7 +129,7 @@
             this.pnlBtn1a1.Controls.Add(this.btnLast);
             this.pnlBtn1a1.Controls.Add(this.btnAvant);
             this.pnlBtn1a1.Controls.Add(this.btnApres);
-            this.pnlBtn1a1.Location = new System.Drawing.Point(651, 475);
+            this.pnlBtn1a1.Location = new System.Drawing.Point(651, 472);
             this.pnlBtn1a1.Name = "pnlBtn1a1";
             this.pnlBtn1a1.Size = new System.Drawing.Size(357, 100);
             this.pnlBtn1a1.TabIndex = 10;
@@ -195,7 +209,7 @@
             this.pnl1a1.Controls.Add(this.picBoxDelimitation);
             this.pnl1a1.Controls.Add(this.lblEventNum);
             this.pnl1a1.Controls.Add(this.lblEvenementNum);
-            this.pnl1a1.Location = new System.Drawing.Point(18, 249);
+            this.pnl1a1.Location = new System.Drawing.Point(18, 233);
             this.pnl1a1.Name = "pnl1a1";
             this.pnl1a1.Size = new System.Drawing.Size(627, 339);
             this.pnl1a1.TabIndex = 5;
@@ -367,11 +381,112 @@
             // pnlAjouterEvenement
             // 
             this.pnlAjouterEvenement.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlAjouterEvenement.Location = new System.Drawing.Point(187, 17);
+            this.pnlAjouterEvenement.Location = new System.Drawing.Point(205, 17);
             this.pnlAjouterEvenement.Name = "pnlAjouterEvenement";
             this.pnlAjouterEvenement.Size = new System.Drawing.Size(609, 555);
             this.pnlAjouterEvenement.TabIndex = 4;
             this.pnlAjouterEvenement.Visible = false;
+            // 
+            // btnAjouterPart
+            // 
+            this.btnAjouterPart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.btnAjouterPart.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterPart.ForeColor = System.Drawing.Color.White;
+            this.btnAjouterPart.Location = new System.Drawing.Point(651, 182);
+            this.btnAjouterPart.Name = "btnAjouterPart";
+            this.btnAjouterPart.Size = new System.Drawing.Size(349, 68);
+            this.btnAjouterPart.TabIndex = 11;
+            this.btnAjouterPart.Text = "Ajouter un participant";
+            this.btnAjouterPart.UseVisualStyleBackColor = false;
+            this.btnAjouterPart.Click += new System.EventHandler(this.btnAjouterPart_Click);
+            // 
+            // pnlGestionDesPart
+            // 
+            this.pnlGestionDesPart.Controls.Add(this.dataGridViewListPart);
+            this.pnlGestionDesPart.Controls.Add(this.cboListEvenement);
+            this.pnlGestionDesPart.Controls.Add(this.lblCurentEvent);
+            this.pnlGestionDesPart.Controls.Add(this.lblParticipantA);
+            this.pnlGestionDesPart.Controls.Add(this.lblGestionDelEvent);
+            this.pnlGestionDesPart.Controls.Add(this.picBoxDelimitation1);
+            this.pnlGestionDesPart.Location = new System.Drawing.Point(18, 233);
+            this.pnlGestionDesPart.Name = "pnlGestionDesPart";
+            this.pnlGestionDesPart.Size = new System.Drawing.Size(627, 339);
+            this.pnlGestionDesPart.TabIndex = 12;
+            // 
+            // dataGridViewListPart
+            // 
+            this.dataGridViewListPart.AllowUserToAddRows = false;
+            this.dataGridViewListPart.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewListPart.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewListPart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewListPart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewListPart.Location = new System.Drawing.Point(45, 119);
+            this.dataGridViewListPart.Name = "dataGridViewListPart";
+            this.dataGridViewListPart.RowHeadersVisible = false;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.dataGridViewListPart.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewListPart.Size = new System.Drawing.Size(539, 201);
+            this.dataGridViewListPart.TabIndex = 17;
+            this.dataGridViewListPart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // cboListEvenement
+            // 
+            this.cboListEvenement.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.cboListEvenement.FormattingEnabled = true;
+            this.cboListEvenement.Location = new System.Drawing.Point(278, 0);
+            this.cboListEvenement.Name = "cboListEvenement";
+            this.cboListEvenement.Size = new System.Drawing.Size(268, 27);
+            this.cboListEvenement.TabIndex = 16;
+            this.cboListEvenement.SelectedIndexChanged += new System.EventHandler(this.cboListEvenement_SelectedIndexChanged);
+            // 
+            // lblCurentEvent
+            // 
+            this.lblCurentEvent.AutoSize = true;
+            this.lblCurentEvent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCurentEvent.Location = new System.Drawing.Point(276, 82);
+            this.lblCurentEvent.Name = "lblCurentEvent";
+            this.lblCurentEvent.Size = new System.Drawing.Size(97, 19);
+            this.lblCurentEvent.TabIndex = 13;
+            this.lblCurentEvent.Text = "EventName";
+            // 
+            // lblParticipantA
+            // 
+            this.lblParticipantA.AutoSize = true;
+            this.lblParticipantA.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.lblParticipantA.Location = new System.Drawing.Point(41, 82);
+            this.lblParticipantA.Name = "lblParticipantA";
+            this.lblParticipantA.Size = new System.Drawing.Size(229, 19);
+            this.lblParticipantA.TabIndex = 3;
+            this.lblParticipantA.Text = "Participants de l\'événement :";
+            // 
+            // lblGestionDelEvent
+            // 
+            this.lblGestionDelEvent.AutoSize = true;
+            this.lblGestionDelEvent.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionDelEvent.Location = new System.Drawing.Point(75, 3);
+            this.lblGestionDelEvent.Name = "lblGestionDelEvent";
+            this.lblGestionDelEvent.Size = new System.Drawing.Size(197, 19);
+            this.lblGestionDelEvent.TabIndex = 0;
+            this.lblGestionDelEvent.Text = "Gestion de l\'événement :";
+            // 
+            // picBoxDelimitation1
+            // 
+            this.picBoxDelimitation1.Image = global::splitEase.Properties.Resources.delimitationBar;
+            this.picBoxDelimitation1.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBoxDelimitation1.InitialImage")));
+            this.picBoxDelimitation1.Location = new System.Drawing.Point(3, 16);
+            this.picBoxDelimitation1.Name = "picBoxDelimitation1";
+            this.picBoxDelimitation1.Size = new System.Drawing.Size(621, 63);
+            this.picBoxDelimitation1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxDelimitation1.TabIndex = 2;
+            this.picBoxDelimitation1.TabStop = false;
             // 
             // frmSplitEase
             // 
@@ -381,11 +496,13 @@
             this.Controls.Add(this.panelAjouterDepense);
             this.Controls.Add(this.pnlAjouterEvenement);
             this.Controls.Add(this.pnlBtn1a1);
-            this.Controls.Add(this.btnAjouterEvenement);
             this.Controls.Add(this.lblCategorie);
-            this.Controls.Add(this.btnAjouterDepense);
             this.Controls.Add(this.BarDeNav);
             this.Controls.Add(this.pnl1a1);
+            this.Controls.Add(this.btnAjouterPart);
+            this.Controls.Add(this.btnAjouterEvenement);
+            this.Controls.Add(this.btnAjouterDepense);
+            this.Controls.Add(this.pnlGestionDesPart);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -397,6 +514,10 @@
             this.pnl1a1.ResumeLayout(false);
             this.pnl1a1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation)).EndInit();
+            this.pnlGestionDesPart.ResumeLayout(false);
+            this.pnlGestionDesPart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListPart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxDelimitation1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,6 +553,14 @@
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Panel pnlBtn1a1;
         private System.Windows.Forms.Panel pnlAjouterEvenement;
+        private System.Windows.Forms.Button btnAjouterPart;
+        private System.Windows.Forms.Panel pnlGestionDesPart;
+        private System.Windows.Forms.ComboBox cboListEvenement;
+        private System.Windows.Forms.Label lblCurentEvent;
+        private System.Windows.Forms.Label lblParticipantA;
+        private System.Windows.Forms.PictureBox picBoxDelimitation1;
+        private System.Windows.Forms.Label lblGestionDelEvent;
+        private System.Windows.Forms.DataGridView dataGridViewListPart;
     }
 }
 

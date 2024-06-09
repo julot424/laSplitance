@@ -76,6 +76,19 @@ namespace splitEase
         private void frmSplitEase_Load(object sender, EventArgs e)
         {
             loadData();
+
+            cx.Open();
+
+            string qry = "SELECT codeEvent, titreEvent from Evenements";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cboListEvenement.DataSource = dt;
+            cboListEvenement.DisplayMember = "titreEvent";
+            cboListEvenement.ValueMember = "codeEvent";
+
+            cx.Close();
         }
 
         private void btnAjouterDepense_Click(object sender, EventArgs e)
@@ -105,6 +118,17 @@ namespace splitEase
             this.Text = "Split Ease : Participants";
             lblCategorie.Text = "Participants";
             cacherTout();
+            btnAjouterPart.Visible = true;
+            pnlGestionDesPart.Visible = true;
+
+            string qry = "SELECT codeEvent, titreEvent from Evenements";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(qry, cx);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            cboListEvenement.DataSource = dt;
+            cboListEvenement.DisplayMember = "titreEvent";
+            cboListEvenement.ValueMember = "codeEvent";
         }
 
         private void BarDeNav_EvenementsClicked(object sender, EventArgs e)
@@ -213,6 +237,66 @@ namespace splitEase
             pnlAjouterEvenement.Visible = false;
             pnlAjouterEvenement.Enabled = true;
             loadData();
+        }
+
+        private void btnAjouterPart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboListEvenement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboListEvenement.SelectedValue != null)
+            {
+                if(cboListEvenement.SelectedValue is DataRowView drv)
+                {
+                    int selectedCodeEvent = Convert.ToInt32(drv["codeEvent"]);
+                    loadPartInGridView(selectedCodeEvent);
+                }
+
+                else
+                {
+                    int selectedCodeEvent = Convert.ToInt32(cboListEvenement.SelectedValue);
+                    loadPartInGridView(selectedCodeEvent);
+                }
+            }
+ 
+            
+        }
+
+        private void loadPartInGridView(int codeEvent) 
+        {
+            
+            string qry = "SELECT (prenomPart || ' ' || nomPart) AS fullname, mobile, adresseMail " +
+                            "FROM Participants p " +
+                                "INNER JOIN Invites i ON p.codeParticipant = i.codePart " +
+                                    "WHERE i.codeEvent = @codeEvent";
+
+            using(SQLiteCommand cmd = new SQLiteCommand(qry, cx))
+            {
+                cmd.Parameters.AddWithValue("@codeEvent", codeEvent);
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridViewListPart.DataSource = dt;
+
+                if(dataGridViewListPart.Rows.Count > 0 )
+                {
+                    dataGridViewListPart.Columns["fullname"].HeaderText = "Nom et prénom";
+                    dataGridViewListPart.Columns["fullname"].Width = 200;
+
+                    dataGridViewListPart.Columns["mobile"].HeaderText = "N° de téléphone";
+
+                    dataGridViewListPart.Columns["adresseMail"].HeaderText = "Adresse e-mail";
+                    dataGridViewListPart.Columns["adresseMail"].Width = 250;
+                }
+            }
         }
     }
 }
